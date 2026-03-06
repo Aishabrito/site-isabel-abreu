@@ -21,7 +21,7 @@ export default function Hero() {
         {/* Espaço para a Foto */}
         <div className="flex-1 relative">
           <div className="relative w-full aspect-square md:aspect-[4/5] bg-slate-200 rounded-2xl overflow-hidden border-2 border-gold/30">
-             {/* Quando tiver a foto, você usará a tag <Image /> do Next.js aqui */}
+
              <div className="absolute inset-0 flex items-center justify-center text-navy/40 italic">
                Foto da Isabel (Autoridade e Sorriso)
              </div>

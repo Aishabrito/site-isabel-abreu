@@ -1,8 +1,8 @@
-import Navbar from './components/layout/Navbar';
-import Hero from './components/sections/Hero';
-import PainPoints from './components/sections/PainPoints';
-import Services from './components/sections/Services';
-import Footer from './components/layout/Footer'; 
+import Navbar from '../components/Navbar';
+import Hero from '../sections/Hero';
+import PainPoints from '../sections/PainPoints';
+import Services from '../sections/Services';
+import Footer from '../components/Footer'; 
 
 export default function Home() {
  return (
