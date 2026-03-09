@@ -13,6 +13,7 @@ body {
   @apply bg-white text-navy antialiased;
 }
 
+
 html {
   scroll-behavior: smooth;
 }

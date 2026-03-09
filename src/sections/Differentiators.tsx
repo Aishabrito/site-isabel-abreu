@@ -35,7 +35,7 @@ export default function Differentiators() {
           {items.map((item) => (
             <div 
               key={item.title} 
-              className="bg-navyDeep hover:bg-navyMid transition-colors duration-300 p-8"
+              className="bg-navy border border-gold/10 hover:bg-white/5transition-colors duration-300 p-8"
             >
               <div className={`text-base mb-4 ${item.sage ? 'text-sage' : 'text-gold'}`}>
                 {item.icon}

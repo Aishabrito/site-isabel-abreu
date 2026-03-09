@@ -1,25 +1,29 @@
-import Navbar from '../components/Navbar';
-import Hero from '../sections/Hero';
-import PainPoints from '../sections/PainPoints';
-import Services from '../sections/Services';
-import Footer from '../components/Footer'; 
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Hero from "../sections/Hero";
+import TrustBand from "../sections/TrustBand";
+import Positioning from "../sections/Positioning";
+import Services from "../sections/Services";
+import Differentiators from "../sections/Differentiators";
+import Manifesto from "../sections/Manifesto";
+import CTAFinal from "../sections/CTAFinal";
 
-export default function Home() {
- return (
-    <main className="min-h-screen bg-white">
+export default function HomePage() {
+  return (
+    <>
       <Navbar />
-      <Hero />
-      <PainPoints />
-      <Services />
       
-      {/* Seção de Palestras Simplificada */}
-      <section className="bg-navy text-white py-20 text-center px-6">
-        <h2 className="text-3xl font-bold mb-6">Inspiração e Estratégia no seu Palco</h2>
-        <p className="max-w-2xl mx-auto mb-8 text-gray-300 italic">Palestra sobre Liderança Humanizada, Gestão de Alta Performance e Finanças.</p>
-        <button className="bg-gold text-navy font-bold py-3 px-10 rounded hover:bg-gold-light transition-all">Solicitar Orçamento</button>
-      </section>
+      <main>
+        <Hero />
+        <TrustBand />
+        <Positioning />
+        <Services />
+        <Differentiators />
+        <Manifesto />
+        <CTAFinal />
+      </main>
 
       <Footer />
-    </main>
+    </>
   );
 }
