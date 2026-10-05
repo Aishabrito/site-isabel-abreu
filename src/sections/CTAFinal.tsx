@@ -19,10 +19,12 @@ export default function CTAFinal({
   ),
   passos = PASSOS_PADRAO,
   cta = "Agendar conversa",
+  ctaHref = AGENDAR_HREF,
 }: {
   title?: React.ReactNode;
   passos?: React.ReactNode[];
   cta?: string;
+  ctaHref?: string;
 }) {
   return (
     <section className="bg-detalhado px-6 py-24 text-cream md:px-10 md:py-32">
@@ -49,7 +51,7 @@ export default function CTAFinal({
             ))}
           </ol>
 
-          <ArrowButton href={AGENDAR_HREF} tone="dark">
+          <ArrowButton href={ctaHref} tone="dark">
             {cta}
           </ArrowButton>
 

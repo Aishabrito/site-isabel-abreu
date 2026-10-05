@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { FAQ, NumberedCards, PageHeader, Section, SectionHead, Steps } from "../../components/blocks";
 import CTAFinal from "../../sections/CTAFinal";
+import { PALESTRAS_HREF } from "../../constants/links";
 
 export const metadata: Metadata = {
   title: "Palestras | Isabel Abreu",
@@ -87,6 +88,7 @@ export default function PalestrasPage() {
           }
           intro="Palestras leves e diretas, com números concretos e sem jargão, para equipes, eventos e instituições que querem falar de dinheiro sem tabu."
           cta="Solicitar proposta"
+          ctaHref={PALESTRAS_HREF}
         />
 
         <Section>
@@ -159,6 +161,7 @@ export default function PalestrasPage() {
             </>,
           ]}
           cta="Solicitar proposta"
+          ctaHref={PALESTRAS_HREF}
         />
       </main>
       <Footer />

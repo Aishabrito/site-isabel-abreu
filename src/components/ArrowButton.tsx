@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { externo } from "../constants/links";
 
 // Botão "Arraste →" da capa clean: texto em caixa-alta + círculo marinho com seta
 export default function ArrowButton({
@@ -17,7 +18,7 @@ export default function ArrowButton({
       : "bg-gold text-navy group-hover:bg-gold-light";
 
   return (
-    <Link href={href} className={`group inline-flex items-center gap-4 ${text}`}>
+    <Link href={href} {...externo(href)} className={`group inline-flex items-center gap-4 ${text}`}>
       <span className="text-xs font-bold uppercase tracking-[0.2em]">{children}</span>
       <span
         className={`flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 group-hover:translate-x-1 ${circle}`}

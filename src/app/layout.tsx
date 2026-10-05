@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
+import WhatsAppFlutuante from "../components/WhatsAppFlutuante";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppFlutuante />
+      </body>
     </html>
   );
 }

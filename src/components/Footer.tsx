@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { INSTAGRAM, NAV_LINKS } from "../constants/links";
+import { AGENDAR_HREF, EMAIL, INSTAGRAM, NAV_LINKS, WHATSAPP } from "../constants/links";
 
 export default function Footer() {
   return (
@@ -20,6 +20,17 @@ export default function Footer() {
             >
               {INSTAGRAM.handle}
             </Link>
+            <Link
+              href={AGENDAR_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-cream/60 transition-colors hover:text-gold-light"
+            >
+              WhatsApp {WHATSAPP.exibicao}
+            </Link>
+            <a href={`mailto:${EMAIL}`} className="text-sm text-cream/60 transition-colors hover:text-gold-light">
+              {EMAIL}
+            </a>
           </div>
 
           <ul className="flex flex-wrap gap-x-8 gap-y-3">

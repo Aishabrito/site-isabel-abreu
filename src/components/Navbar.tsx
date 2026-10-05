@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AGENDAR_HREF, NAV_LINKS } from "../constants/links";
+import { AGENDAR_HREF, NAV_LINKS, externo } from "../constants/links";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +55,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href={AGENDAR_HREF}
+            {...externo(AGENDAR_HREF)}
             className="hidden rounded-full bg-navy px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-cream transition-colors hover:bg-terracotta sm:inline-block"
           >
             Agendar conversa
@@ -94,6 +95,8 @@ export default function Navbar() {
           <li className="pt-4">
             <Link
               href={AGENDAR_HREF}
+              {...externo(AGENDAR_HREF)}
+            {...externo(AGENDAR_HREF)}
               onClick={() => setOpen(false)}
               className="inline-block rounded-full bg-navy px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] text-cream"
             >

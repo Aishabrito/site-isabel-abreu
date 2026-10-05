@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { CheckList, FAQ, NumberedCards, PageHeader, Section, SectionHead, Steps, TextLink } from "../../components/blocks";
 import CTAFinal from "../../sections/CTAFinal";
+import { EMPRESAS_HREF } from "../../constants/links";
 
 export const metadata: Metadata = {
   title: "Consultoria para Empresas | Isabel Abreu",
@@ -85,6 +86,7 @@ export default function ParaEmpresasPage() {
               Faturar é bom. <em className="accent">Lucrar é melhor.</em>
             </>
           }
+          ctaHref={EMPRESAS_HREF}
           intro="Organização financeira para o seu negócio crescer sem sufoco: caixa sob controle, preço certo e decisões tomadas com números na mesa."
         />
 
@@ -143,6 +145,7 @@ export default function ParaEmpresasPage() {
               Você recebe um <b className="text-gold-light">plano de organização</b> com prioridades.
             </>,
           ]}
+          ctaHref={EMPRESAS_HREF}
         />
       </main>
       <Footer />

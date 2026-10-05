@@ -7,6 +7,7 @@ import { PageHeader, Section, SectionHead } from "../../components/blocks";
 import CTAFinal from "../../sections/CTAFinal";
 import { MATERIAS, VEICULOS } from "../../content/midia";
 import { formatarData } from "../../lib/datas";
+import { EMAIL, IMPRENSA_HREF } from "../../constants/links";
 
 export const metadata: Metadata = {
   title: "Na mídia | Isabel Abreu",
@@ -64,13 +65,18 @@ export default function NaMidiaPage() {
               }
               intro="Disponível para entrevistas sobre finanças pessoais, endividamento, investimentos, aposentadoria e comportamento financeiro."
             />
-            <div className="mb-14 lg:justify-self-end">
+            <div className="mb-14 flex flex-col items-start gap-4 lg:items-end lg:justify-self-end">
               <Link
-                href="/agendar"
+                href={IMPRENSA_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block rounded-full bg-navy px-8 py-4 text-xs font-bold uppercase tracking-[0.16em] text-cream transition-colors hover:bg-terracotta"
               >
                 Contato para imprensa
               </Link>
+              <a href={`mailto:${EMAIL}`} className="text-sm font-semibold text-navy hover:text-terracotta">
+                ou {EMAIL}
+              </a>
             </div>
           </div>
         </Section>

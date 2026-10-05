@@ -19,12 +19,15 @@ export type Materia = {
   imagem?: string;
 };
 
-// TODO: substituir pelos títulos, datas e links reais das matérias.
+// ATENÇÃO: matérias PROVISÓRIAS, só para o layout ficar completo.
+// Trocar pelos títulos, datas e links reais antes de divulgar o site.
 export const MATERIAS: Materia[] = [
-  { veiculo: "SBT", tipo: "TV", titulo: "Título da matéria no SBT", data: "2026-09-01", link: "" },
-  { veiculo: "Globo", tipo: "TV", titulo: "Título da matéria na Globo", data: "2026-08-01", link: "" },
-  { veiculo: "CBN", tipo: "Rádio", titulo: "Título da entrevista na CBN", data: "2026-07-01", link: "" },
-  { veiculo: "Record", tipo: "TV", titulo: "Título da matéria na Record", data: "2026-06-01", link: "" },
+  { veiculo: "SBT", tipo: "TV", titulo: "Bets: quando a aposta vira a primeira conta do mês", data: "2026-09-10", link: "" },
+  { veiculo: "Globo", tipo: "TV", titulo: "Como usar o 13º salário para sair das dívidas", data: "2026-08-22", link: "" },
+  { veiculo: "CBN", tipo: "Rádio", titulo: "Tesouro IPCA+: vale a pena investir agora?", data: "2026-07-15", link: "" },
+  { veiculo: "Record", tipo: "TV", titulo: "Endividamento das famílias: por onde começar a organizar", data: "2026-06-03", link: "" },
+  { veiculo: "CBN", tipo: "Rádio", titulo: "Reserva de emergência: quanto guardar e onde deixar o dinheiro", data: "2026-05-12", link: "" },
+  { veiculo: "SBT", tipo: "TV", titulo: "Inflação e salário: o que muda no orçamento de casa", data: "2026-04-08", link: "" },
 ];
 
 export const VEICULOS = Array.from(new Set(MATERIAS.map((m) => m.veiculo)));
