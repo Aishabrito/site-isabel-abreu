@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AGENDAR_HREF, NAV_LINKS } from "../constants/links";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const ativo = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -38,7 +41,10 @@ export default function Navbar() {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-warm-gray transition-colors hover:text-navy"
+                aria-current={ativo(link.href) ? "page" : undefined}
+                className={`text-sm font-medium transition-colors hover:text-navy ${
+                  ativo(link.href) ? "text-navy underline decoration-gold decoration-2 underline-offset-8" : "text-warm-gray"
+                }`}
               >
                 {link.label}
               </Link>
@@ -76,7 +82,10 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-line py-3 font-serif text-xl text-navy"
+                aria-current={ativo(link.href) ? "page" : undefined}
+                className={`block border-b border-line py-3 font-serif text-xl ${
+                  ativo(link.href) ? "italic text-terracotta" : "text-navy"
+                }`}
               >
                 {link.label}
               </Link>

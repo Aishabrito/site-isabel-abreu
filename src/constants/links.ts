@@ -1,8 +1,9 @@
 export const NAV_LINKS = [
-  { label: "Início", href: "/" },
-  { label: "Consultoria Pessoal", href: "/consultoria-pessoal" },
-  { label: "Para Empresas", href: "/para-empresas" },
+  { label: "Para você", href: "/consultoria-pessoal" },
+  { label: "Para empresas", href: "/para-empresas" },
   { label: "Palestras", href: "/palestras" },
+  { label: "Na mídia", href: "/na-midia" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const INSTAGRAM = {

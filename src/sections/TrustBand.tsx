@@ -1,7 +1,8 @@
+import Link from "next/link";
+import { VEICULOS } from "../content/midia";
+
 // Faixa "Na mídia": selo "Foi ao ar" marinho com ponto vermelho, como no post do guia
 export default function TrustBand() {
-  const veiculos = ["SBT", "Globo", "CBN", "Record"];
-
   return (
     <section aria-label="Na mídia" className="border-y border-line bg-surface px-6 py-8 md:px-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 md:flex-row md:justify-between">
@@ -13,13 +14,16 @@ export default function TrustBand() {
           </span>
         </div>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 md:gap-x-16">
-          {veiculos.map((v) => (
-            <li key={v} className="font-serif text-2xl font-medium text-navy/70 md:text-3xl">
+        <Link
+          href="/na-midia"
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 md:gap-x-16"
+        >
+          {VEICULOS.map((v) => (
+            <span key={v} className="font-serif text-2xl font-medium text-navy/70 transition-colors hover:text-navy md:text-3xl">
               {v}
-            </li>
+            </span>
           ))}
-        </ul>
+        </Link>
       </div>
     </section>
   );
