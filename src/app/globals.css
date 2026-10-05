@@ -1,19 +1,133 @@
-/* No Tailwind v4, usamos apenas este import no topo */
 @import "tailwindcss";
 
-/* Definindo seu tema direto no CSS (Padrão v4) */
-@theme {
-  --color-navy: #002147; /* */
-  --color-gold: #D4AF37; /* */
-  --color-gold-light: #F7E7CE;
+/* Sistema visual @isabreu.co — mesmas cores e fontes do guia de conteúdo */
+@theme inline {
+  /* Paleta principal */
+  --color-navy: #0F1E33;          /* Marinho: fundo escuro, títulos no creme */
+  --color-cream: #F6F1EA;         /* Creme: fundo claro */
+  --color-gold: #C9A36B;          /* Ouro: números, linhas, etiquetas */
+  --color-gold-light: #E4CFA8;    /* Ouro claro: itálico no escuro, marca-texto, círculo */
+  --color-terracotta: #B8775E;    /* Terracota: itálico no creme */
+
+  /* Cores de apoio */
+  --color-navy-night: #0B1422;
+  --color-navy-glow: #24406A;
+  --color-sand: #EADFD0;
+  --color-warm-gray: #6D6A66;
+  --color-graphite: #3A3A3A;
+  --color-surface: #FFFDF9;
+  --color-line: #E4D9C9;
+  --color-chip: #EFE5D6;
+  --color-live: #E0574A;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
 }
 
-/* Agora o @apply vai funcionar porque o import está acima */
-body {
-  @apply bg-white text-navy antialiased;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-graphite antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif font-medium text-balance text-navy;
+    letter-spacing: -0.02em;
+  }
 }
 
+/* Etiqueta em caixa-alta com espaçamento +20% */
+@utility eyebrow {
+  @apply text-xs font-bold uppercase text-gold;
+  letter-spacing: 0.2em;
+}
 
-html {
-  scroll-behavior: smooth;
+/* Palavra de impacto: itálico Light em terracota (no creme) */
+@utility accent {
+  @apply font-serif font-light italic text-terracotta;
+}
+
+/* Variante para fundo marinho: ouro claro */
+@utility accent-dark {
+  @apply font-serif font-light italic text-gold-light;
+}
+
+/* Marca-texto ouro claro nos 40% de baixo */
+@utility highlight {
+  @apply font-bold text-navy;
+  background: linear-gradient(transparent 60%, var(--color-gold-light) 60%);
+}
+
+/* Fundo detalhado e CTA */
+@utility bg-detalhado {
+  background: radial-gradient(120% 90% at 85% 0%, #24406A 0%, #0F1E33 55%, #0A1526 100%);
+}
+
+/* Fundo storytelling */
+@utility bg-storytelling {
+  background: radial-gradient(90% 60% at 100% 0%, #16263F 0%, #0B1422 60%);
+}
+
+/* Grade de linhas brancas a 4% do carrossel detalhado */
+@utility bg-grade {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Texto dos posts do blog */
+.prose-isa {
+  @apply text-lg leading-[1.75] text-graphite;
+}
+.prose-isa > * + * {
+  @apply mt-6;
+}
+.prose-isa h2 {
+  @apply mt-14 text-[2rem] leading-tight;
+}
+.prose-isa h3 {
+  @apply mt-10 text-2xl;
+}
+.prose-isa em {
+  @apply font-serif italic text-terracotta;
+}
+.prose-isa strong {
+  @apply font-bold text-navy;
+  background: linear-gradient(transparent 60%, var(--color-gold-light) 60%);
+}
+.prose-isa a {
+  @apply font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4 hover:text-terracotta;
+}
+.prose-isa ul,
+.prose-isa ol {
+  @apply flex flex-col gap-3 pl-6;
+}
+.prose-isa ul {
+  @apply list-disc marker:text-gold;
+}
+.prose-isa ol {
+  @apply list-decimal marker:font-bold marker:text-gold;
+}
+.prose-isa blockquote {
+  @apply my-10 border-l-4 border-gold pl-6 font-serif text-2xl font-light italic leading-snug text-navy;
+}
+.prose-isa hr {
+  @apply my-12 border-line;
+}
+.prose-isa img {
+  @apply rounded-[1.5rem];
+}
+.prose-isa table {
+  @apply w-full border-collapse text-base;
+}
+.prose-isa th,
+.prose-isa td {
+  @apply border-b border-line px-3 py-3 text-left;
+}
+.prose-isa th {
+  @apply text-xs font-bold uppercase tracking-[0.16em] text-warm-gray;
 }

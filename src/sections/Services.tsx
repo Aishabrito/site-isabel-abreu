@@ -2,58 +2,68 @@ import Link from "next/link";
 
 export default function Services() {
   const rows = [
-    { n: "01", name: "Consultoria Pessoal", desc: "Planejamento patrimonial, gestão de investimentos e estratégia fiscal para profissionais de alta renda.", tag: "Pessoa Física", href: "/consultoria-pessoal" },
-    { n: "02", name: "Para Empresas", desc: "Estruturação financeira, governança corporativa e processos de alta performance para negócios em expansão.", tag: "Pessoa Jurídica", href: "/para-empresas" },
-    { n: "03", name: "Palestras", desc: "Conteúdo de alto impacto sobre liderança financeira, gestão de alta performance e inteligência econômica.", tag: "Educação Executiva", href: "/palestras" },
+    {
+      n: "01",
+      name: "Consultoria Pessoal",
+      desc: "Diagnóstico dos seus números, reserva de emergência, organização do orçamento e um plano de investimentos que cabe na sua vida.",
+      tag: "Pessoa física",
+      href: "/consultoria-pessoal",
+    },
+    {
+      n: "02",
+      name: "Para Empresas",
+      desc: "Separação das contas, fluxo de caixa, precificação e rotinas financeiras para o negócio crescer sem sufoco.",
+      tag: "Pessoa jurídica",
+      href: "/para-empresas",
+    },
+    {
+      n: "03",
+      name: "Palestras",
+      desc: "Educação financeira para equipes e eventos, com linguagem leve, exemplos reais e números que todo mundo entende.",
+      tag: "Empresas e eventos",
+      href: "/palestras",
+    },
   ];
 
   return (
-    <section className="bg-cream py-24 px-8 md:px-[8vw]">
-      
-      {/* CABEÇALHO */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-10">
-        <div>
-          <p className="flex items-center gap-4 text-navy/60 text-xs tracking-[0.35em] uppercase mb-4">
-            <span className="w-8 h-px bg-navy/30 block" />
-            Área de atuação
+    <section className="px-6 py-24 md:px-10 md:py-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14 flex flex-col justify-between gap-8 border-t border-line pt-8 md:flex-row md:items-end">
+          <div className="flex flex-col gap-4">
+            <span className="eyebrow">Como posso ajudar</span>
+            <h2 className="text-[clamp(2.25rem,4.5vw,3.5rem)] leading-[1.06]">
+              Uma frente para <em className="accent">cada momento.</em>
+            </h2>
+          </div>
+          <p className="max-w-sm leading-relaxed text-warm-gray md:text-right">
+            Nada de solução pronta. Cada plano é montado a partir da sua realidade.
           </p>
-          <h2 className="text-navy text-4xl md:text-5xl font-serif font-light leading-tight">
-            Uma frente para<br />cada estágio da jornada.
-          </h2>
         </div>
-        <p className="text-navy/60 text-sm leading-relaxed max-w-xs text-left md:text-right">
-          Não trabalhamos com soluções genéricas.<br />Cada estratégia é construída para o seu perfil.
-        </p>
-      </div>
 
-      {/* LISTA DE SERVIÇOS */}
-      <div className="flex flex-col">
-        {rows.map((r) => (
-          <Link key={r.n} href={r.href} className="group text-none">
-            {/* O group permite que o hover na div afete os elementos filhos */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 py-10 border-b border-navy/10 group-hover:bg-black/5 transition-colors duration-300 px-4 md:px-0">
-              
-              <span className="font-serif text-base text-navy/20 w-12 text-left">{r.n}</span>
-              
-              <span className="font-serif text-3xl text-navy group-hover:text-gold transition-colors duration-300 flex-1">
-                {r.name}
-              </span>
-              
-              <span className="text-sm text-navy/60 leading-relaxed flex-[1.2]">
-                {r.desc}
-              </span>
-              
-              <span className="text-[0.55rem] tracking-[0.2em] uppercase px-4 py-2 border border-navy/20 text-navy/40 group-hover:text-sage group-hover:border-sage transition-colors duration-300 whitespace-nowrap">
-                {r.tag}
-              </span>
-              
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-navy/20 group-hover:text-gold transition-colors duration-300 hidden md:block">
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-
-            </div>
-          </Link>
-        ))}
+        <ul className="flex flex-col">
+          {rows.map((r) => (
+            <li key={r.n}>
+              <Link
+                href={r.href}
+                className="group grid grid-cols-[auto_1fr_auto] items-center gap-x-6 gap-y-3 border-b border-line py-8 transition-colors md:grid-cols-[4rem_1fr_1.3fr_auto_auto] md:gap-x-10 md:py-10"
+              >
+                <span className="font-serif text-3xl font-light italic text-gold">{r.n}</span>
+                <span className="font-serif text-3xl font-medium text-navy transition-colors duration-300 group-hover:text-terracotta md:text-4xl">
+                  {r.name}
+                </span>
+                <span className="col-span-3 leading-relaxed text-warm-gray md:col-span-1">{r.desc}</span>
+                <span className="hidden whitespace-nowrap rounded-full bg-chip px-4 py-1.5 text-xs font-semibold text-navy md:inline-block">
+                  {r.tag}
+                </span>
+                <span className="row-start-1 col-start-3 flex h-11 w-11 items-center justify-center rounded-full border border-line text-navy transition-all duration-300 group-hover:border-navy group-hover:bg-navy group-hover:text-cream md:col-start-auto md:row-start-auto">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

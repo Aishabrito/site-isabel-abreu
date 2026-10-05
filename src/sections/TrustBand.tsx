@@ -1,24 +1,30 @@
-export default function TrustBand() {
-  const items = [
-    "Gestão Patrimonial", 
-    "Planejamento Tributário", 
-    "Inteligência Financeira", 
-    "Alta Performance", 
-    "Liderança Estratégica"
-  ];
+import Link from "next/link";
+import { VEICULOS } from "../content/midia";
 
+// Faixa "Na mídia": selo "Foi ao ar" marinho com ponto vermelho, como no post do guia
+export default function TrustBand() {
   return (
-    <div className="bg-navy border-y border-gold/10 py-6 px-8 flex items-center justify-center flex-wrap gap-6 md:gap-12">
-      {items.map((item, index) => (
-        <span 
-          key={item} 
-          className={`flex items-center gap-4 text-xs tracking-[0.2em] uppercase ${index % 3 === 1 ? 'text-sage' : 'text-white/20'}`}
+    <section aria-label="Na mídia" className="border-y border-line bg-surface px-6 py-8 md:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 md:flex-row md:justify-between">
+        <div className="flex items-center gap-4">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Na mídia</span>
+          <span className="flex items-center gap-2 rounded-full bg-navy px-3 py-1 text-[0.7rem] font-semibold text-cream">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-live" />
+            Foi ao ar
+          </span>
+        </div>
+
+        <Link
+          href="/na-midia"
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 md:gap-x-16"
         >
-          {/* Bolinha divisória que some no celular e aparece no PC (hidden md:block) */}
-          {index > 0 && <span className="w-1 h-1 rounded-full bg-gold/20 hidden md:block" />}
-          {item}
-        </span>
-      ))}
-    </div>
+          {VEICULOS.map((v) => (
+            <span key={v} className="font-serif text-2xl font-medium text-navy/70 transition-colors hover:text-navy md:text-3xl">
+              {v}
+            </span>
+          ))}
+        </Link>
+      </div>
+    </section>
   );
 }
