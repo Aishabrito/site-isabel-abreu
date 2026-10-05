@@ -1,61 +1,49 @@
-// src/components/Footer.tsx
 import Link from "next/link";
-import { NAV_LINKS } from "../constants/links"; // <-- Mesmo import aqui!
+import { INSTAGRAM, NAV_LINKS } from "../constants/links";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy py-14 px-8 md:px-16 border-t border-gold/10">
-      
-      <div className="flex flex-col md:flex-row items-center justify-between flex-wrap gap-8 mb-10">
-        
-        {/* LOGO */}
-        <div className="flex flex-col items-center md:items-start gap-1">
-          <span className="text-white text-lg font-serif font-bold tracking-widest uppercase">
-            ISABEL ABREU
-          </span>
-          <span className="text-gold text-xs tracking-widest uppercase">
-            Estratégia & Finanças · Est. 2024
-          </span>
-        </div>
-        
-        {/* LINKS PUXADOS DA CONSTANTE */}
-        <div className="flex gap-6 flex-wrap justify-center">
-          {NAV_LINKS.map((link) => (
-            <Link 
-              key={link.label} 
-              href={link.href}
-              className="text-white/40 hover:text-gold transition-colors text-xs tracking-widest uppercase"
+    <footer className="bg-navy-night px-6 pb-10 pt-16 text-cream md:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          {/* ASSINATURA */}
+          <div className="flex flex-col gap-2">
+            <span className="font-serif text-3xl font-medium text-cream">
+              Isabel <em className="accent-dark">Abreu</em>
+            </span>
+            <span className="text-sm text-cream/60">Economista e Planejadora Financeira</span>
+            <Link
+              href={INSTAGRAM.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 text-sm font-semibold text-gold transition-colors hover:text-gold-light"
             >
-              {link.label}
+              {INSTAGRAM.handle}
             </Link>
-          ))}
-        </div>
-        
-        {/* REDES SOCIAIS */}
-        <div className="flex gap-6">
-          {["Instagram", "LinkedIn"].map((social) => (
-            <Link 
-              key={social} 
-              href="#"
-              className="text-sage hover:text-white transition-colors text-xs tracking-widest uppercase"
-            >
-              {social}
-            </Link>
-          ))}
+          </div>
+
+          <ul className="flex flex-wrap gap-x-8 gap-y-3">
+            {NAV_LINKS.map((link) => (
+              <li key={link.label}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-cream/60 transition-colors hover:text-gold-light"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
+        {/* Barra toda em ouro, como no slide final */}
+        <div className="my-10 h-px bg-gold/30" />
+
+        <div className="flex flex-col gap-3 text-xs text-cream/40 md:flex-row md:justify-between">
+          <span>© {new Date().getFullYear()} Isabel Abreu. Todos os direitos reservados.</span>
+          <span>Política de Privacidade · Termos de Uso</span>
+        </div>
       </div>
-      
-      {/* COPYRIGHT */}
-      <div className="border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-        <span className="text-white/30 text-xs tracking-wider">
-          © 2024 Isabel Abreu. Todos os direitos reservados.
-        </span>
-        <span className="text-white/30 text-xs tracking-wider">
-          Política de Privacidade · Termos de Uso
-        </span>
-      </div>
-      
     </footer>
   );
 }

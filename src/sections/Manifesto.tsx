@@ -1,29 +1,23 @@
+// Frase de impacto no estilo do slide storytelling: Manrope forte + trecho em Fraunces itálico ouro claro
 export default function Manifesto() {
   return (
-    <section className="bg-navy py-40 px-8 text-center relative overflow-hidden flex flex-col items-center">
-      
-      {/* Detalhe de linha e bolinha */}
-      <div className="flex items-center justify-center gap-8 mb-16">
-        <div className="h-px w-20 bg-gold/20" />
-        <div className="w-2 h-2 rounded-full bg-gold/50" />
-        <div className="h-px w-20 bg-gold/20" />
-      </div>
-
-      <blockquote className="font-serif text-3xl md:text-5xl font-light italic leading-relaxed max-w-3xl text-white mb-12">
-        &quot;Não é sobre privação.<br />
-        Não é sobre sacrifício.<br />
-        É sobre <em className="not-italic text-goldLight">decisão.</em>&quot;
-      </blockquote>
-
-      {/* Assinatura */}
-      <div className="flex items-center justify-center gap-4">
-        <div className="w-6 h-px bg-gold/40" />
-        <cite className="font-sans text-[0.58rem] tracking-[0.32em] uppercase text-gold/70 not-italic">
-          Isabel Abreu
-        </cite>
-        <div className="w-6 h-px bg-gold/40" />
-      </div>
-
+    <section className="bg-navy-night px-6 py-28 md:px-10 md:py-40">
+      <figure className="mx-auto flex max-w-4xl flex-col gap-10">
+        <span aria-hidden="true" className="font-serif text-[9rem] leading-[0.5] text-gold">
+          “
+        </span>
+        <blockquote className="flex flex-col gap-3 text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-[1.15]">
+          <span className="text-cream/45">Não é sobre privação.</span>
+          <span className="text-cream/45">Não é sobre sacrifício.</span>
+          <span className="text-cream">
+            É sobre <em className="accent-dark">decisão.</em>
+          </span>
+        </blockquote>
+        <figcaption className="flex items-center justify-between border-t border-white/10 pt-6 text-sm">
+          <span className="text-cream/50">Isabel Abreu · Economista</span>
+          <span className="font-semibold text-gold">@isabreu.co</span>
+        </figcaption>
+      </figure>
     </section>
   );
 }

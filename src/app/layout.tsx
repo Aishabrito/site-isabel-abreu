@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Fonte limpa e moderna
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
-  title: "Isabel Abreu | Estratégia & Finanças",
-  description: "Transforme seus números em liberdade e sua gestão em lucro real.",
+  title: "Isabel Abreu | Economista e Planejadora Financeira",
+  description:
+    "Planejamento financeiro sem julgamento, para você sair do improviso e decidir com números. Consultoria pessoal, empresas e palestras.",
 };
 
 export default function RootLayout({
@@ -15,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-BR" className={`${fraunces.variable} ${manrope.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
